@@ -20,8 +20,8 @@ public class Exercise9 {
 
     private void getSalesAnalytics() {
         getTotalSales();
-        getSalesByCondition(sale -> sale.getPrice() <= TEN_THOUSAND, " less or equal than" + TEN_THOUSAND);
-        getSalesByCondition(sale -> sale.getPrice() > TEN_THOUSAND && sale.getPrice() < TWENTY_THOUSAND, " greater than" + TEN_THOUSAND + "and less than" + TWENTY_THOUSAND);
+        getSalesByCondition(sale -> sale.getPrice() <= TEN_THOUSAND, " less or equal than " + TEN_THOUSAND);
+        getSalesByCondition(sale -> sale.getPrice() > TEN_THOUSAND && sale.getPrice() < TWENTY_THOUSAND, " greater than " + TEN_THOUSAND + " and less than " + TWENTY_THOUSAND);
         getSalesByDetail();
     }
 
@@ -36,7 +36,7 @@ public class Exercise9 {
 
         List<Sale> sales = salesRepository.getSales().stream().filter(condition).toList();
 
-        System.out.println("The sales with condition" + message + " are " + sales.size());
+        System.out.println("The sales with condition" + message + " are: " + sales.size() + " items");
     }
 
     private void getSalesByDetail() {

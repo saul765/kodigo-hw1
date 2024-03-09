@@ -23,7 +23,7 @@ public class Exercise1 {
             }
         }
 
-        System.out.println("The quantity of numbers greater than zero are: " + positiveNumbers);
+        System.out.println("The quantity of numbers greater or equal than zero are: " + positiveNumbers);
 
         System.out.println("The quantity of numbers less than zero are: " + negativeNumbers);
 

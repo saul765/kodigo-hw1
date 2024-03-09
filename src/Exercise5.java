@@ -85,9 +85,9 @@ public class Exercise5 {
     private void checkAnalytics() {
         System.out.println("Total sells: " + sales.size() + " products");
         System.out.println("Total sells amount: " + sales.stream().mapToDouble(Product::getPrice).sum());
-        sellsByCondition(product -> product.getPrice() > ONE_THOUSAND, " greater than" + ONE_THOUSAND);
-        sellsByCondition(product -> (product.getPrice() > FIVE_HUNDRED && product.getPrice() <= ONE_THOUSAND), " greater than" + FIVE_HUNDRED + "and lower or equal than" + ONE_THOUSAND);
-        sellsByCondition(product -> product.getPrice() <= FIVE_HUNDRED, " lower or equal than" + FIVE_HUNDRED);
+        sellsByCondition(product -> product.getPrice() > ONE_THOUSAND, " greater than " + ONE_THOUSAND);
+        sellsByCondition(product -> (product.getPrice() > FIVE_HUNDRED && product.getPrice() <= ONE_THOUSAND), " greater than " + FIVE_HUNDRED + " and lower or equal than" + ONE_THOUSAND);
+        sellsByCondition(product -> product.getPrice() <= FIVE_HUNDRED, " lower or equal than " + FIVE_HUNDRED);
         sellsByCategory();
 
     }
@@ -96,7 +96,8 @@ public class Exercise5 {
         List<Product> saleCondition = sales.stream().filter(condition).toList();
 
         if (saleCondition.isEmpty()) {
-            System.out.println("No sales");
+            System.out.println("Sales with condition" + message + " : " + "WITHOUT SALES");
+
         } else {
             System.out.println("Sales with condition" + message + " : " + saleCondition.size() + " products");
         }

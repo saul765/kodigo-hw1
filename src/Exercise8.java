@@ -40,6 +40,7 @@ public class Exercise8 {
                         break;
                     case 3:
                         ex8.checkout();
+                        System.exit(Constants.ZERO);
                         break;
                     default:
                         System.out.println("Invalid option");
@@ -98,7 +99,6 @@ public class Exercise8 {
 
         System.out.println("Thank you for your purchase!");
         System.out.println("===================================================");
-        System.exit(Constants.ZERO);
     }
 
 }

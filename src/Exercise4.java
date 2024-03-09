@@ -11,7 +11,7 @@ public class Exercise4 {
 
         Double hourRate = consoleUtils.requestDoubleFromTerminal("Enter the value on USD per hour: ");
 
-        System.out.printf("The total payment for the %d hours worked is: %.2f", (WORK_DAYS * WORK_HOURS), calculatePayment(hourRate));
+        System.out.printf("The total payment for the %d hours worked is: $%.2f", (WORK_DAYS * WORK_HOURS), calculatePayment(hourRate));
     }
 
     public static Double calculatePayment(Double hourRate) {

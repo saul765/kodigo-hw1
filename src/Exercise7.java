@@ -17,18 +17,19 @@ public class Exercise7 {
 
     public static void main(String[] args) {
 
-        Exercise7 ex8 = new Exercise7();
+        Exercise7 ex7 = new Exercise7();
 
         ConsoleUtils console = new ConsoleUtils();
         do {
             try {
+                ex7.hintUsers();
                 String name = console.requestStringFromTerminal("Please enter your name to check your information or press X to exit: ");
 
                 if (name.equals("X")) {
                     System.out.println("Goodbye!");
                     System.exit(Constants.ZERO);
                 }
-                ex8.checkCardInformation(name);
+                ex7.checkCardInformation(name);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -72,5 +73,9 @@ public class Exercise7 {
                 CardType.OTHER, OTHER_INCREMENT
         );
 
+    }
+
+    private void hintUsers() {
+        System.out.println("You can use the following names to check the information type:< pepe, mario or juan > ");
     }
 }
