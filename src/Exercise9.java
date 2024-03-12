@@ -37,10 +37,17 @@ public class Exercise9 {
         List<Sale> sales = salesRepository.getSales().stream().filter(condition).toList();
 
         System.out.println("The sales with condition" + message + " are: " + sales.size() + " items");
+        sumByCondition(sales, message);
     }
 
     private void getSalesByDetail() {
         System.out.println("Total sales by detail: ");
         salesRepository.getSales().forEach(sale -> System.out.println(sale.toString()));
+    }
+
+
+    private void sumByCondition(List<Sale> filteredSale, String message) {
+        Double totalSales = filteredSale.stream().mapToDouble(Sale::getPrice).sum();
+        System.out.println("Total sales: of condition " + message + " are $" + totalSales);
     }
 }
