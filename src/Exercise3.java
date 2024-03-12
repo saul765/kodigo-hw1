@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Exercise3 {
 
 
@@ -8,46 +11,37 @@ public class Exercise3 {
 
         Integer term = consoleUtils.requestIntegerFromTerminal("Enter the N term of the fibonacci sequence you want to check: ");
 
-
-        System.out.println("The fibonacci number of the term using iterative " + term + " is: " + fibonacciIterative(term));
-
-        // subtracting 1 because the sequence starts at 0
-        System.out.println("The fibonacci number of the term using recursive " + term + " is: " + fibonacciRecursive(term - Constants.ONE));
+        System.out.println("The fibonacci numbers of the " + term + " term is: " + fibonacciIterative(term));
 
     }
 
-    private static Integer fibonacciIterative(Integer term) {
+    private static List<Integer> fibonacciIterative(Integer term) {
         Integer firstTerm = Constants.ZERO;
 
         Integer secondTerm = Constants.ONE;
 
-        Integer result = Constants.ZERO;
+        Integer result;
+
 
         if (term.equals(Constants.ZERO)) {
-            return firstTerm;
+            return List.of(firstTerm);
         }
 
         if (term.equals(Constants.ONE)) {
-            return secondTerm;
+            return List.of(firstTerm, secondTerm);
         }
+
+        ArrayList<Integer> fibonacciSequence = new ArrayList<>(List.of(firstTerm, secondTerm));
+
 
         // Using 3 because we already have the first two terms
         for (int i = 3; i <= term; i++) {
             result = firstTerm + secondTerm;
             firstTerm = secondTerm;
             secondTerm = result;
+            fibonacciSequence.add(result);
         }
-        return result;
+        return fibonacciSequence;
     }
 
-    // Fibonacci sequence using recursion
-    private static Integer fibonacciRecursive(Integer term) {
-
-        if (term.equals(Constants.ZERO)) return Constants.ZERO;
-
-        if (term.equals(Constants.ONE)) return Constants.ONE;
-
-        return fibonacciRecursive(term - 1) + fibonacciRecursive(term - 2);
-
-    }
 }
